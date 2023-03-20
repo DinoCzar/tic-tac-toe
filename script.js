@@ -1,11 +1,31 @@
 const gameBoard = (() => {
   const boardValues = ["", "", "", "", "", "", "", "", ""];
 
+  const tile1 = document.querySelector("#button-1");
+  const tile2 = document.querySelector("#button-2");
+  const tile3 = document.querySelector("#button-3");
+  const tile4 = document.querySelector("#button-4");
+  const tile5 = document.querySelector("#button-5");
+  const tile6 = document.querySelector("#button-6");
+  const tile7 = document.querySelector("#button-7");
+  const tile8 = document.querySelector("#button-8");
+  const tile9 = document.querySelector("#button-9");
+
   const tile = document.querySelectorAll(".tile");
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
-      boardValues[tile.id - 1] = "X";
-      tile.textContent = boardValues[tile.id - 1];
+      boardValues[tile.id.slice(7, 8) - 1] = "X";
+      boardValues[tile.id.slice(7, 8)] = "O";
+
+      tile1.textContent = boardValues[0];
+      tile2.textContent = boardValues[1];
+      tile3.textContent = boardValues[2];
+      tile4.textContent = boardValues[3];
+      tile5.textContent = boardValues[4];
+      tile6.textContent = boardValues[5];
+      tile7.textContent = boardValues[6];
+      tile8.textContent = boardValues[7];
+      tile9.textContent = boardValues[8];
 
       const topRow = [boardValues[0], boardValues[1], boardValues[2]];
       const middleRow = [boardValues[3], boardValues[4], boardValues[5]];
