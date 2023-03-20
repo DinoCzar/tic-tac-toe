@@ -1,5 +1,28 @@
-.test {
-  background-color: red;
-  width: 10px;
-  height: 10px;
+body {
+  justify-items: center;
+  display: grid;
+}
+
+#container {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 500px 1fr;
+  width: 500px;
+  height: 700px;
+}
+
+#board {
+  display: grid;
+  gap: 10px;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.tile {
+  background-color: lightgrey;
+  width: 1fr;
+  height: 1fr;
+}
+
+#scores {
+  background-color: lightgrey;
 }
