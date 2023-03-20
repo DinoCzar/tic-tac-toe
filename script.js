@@ -29,6 +29,7 @@ const gameBoard = (() => {
   checkWinner(middleRow);
   checkWinner(bottomRow);
   checkWinner(leftColumn);
+  checkWinner(middleColumn);
   checkWinner(rightColumn);
   checkWinner(diagonalOne);
   checkWinner(diagonalTwo);
