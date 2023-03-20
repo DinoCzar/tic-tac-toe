@@ -15,7 +15,17 @@ const gameBoard = (() => {
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
       boardValues[tile.id.slice(7, 8) - 1] = "X";
-      boardValues[tile.id.slice(7, 8)] = "O";
+
+      for (let i = 0; i < boardValues.length; i++) {
+        let computerSelection = [
+          Math.floor(Math.random() * boardValues.length),
+        ];
+        if (boardValues[computerSelection] === "") {
+          boardValues[computerSelection] = "O";
+          break;
+        }
+        console.log(computerSelection);
+      }
 
       tile1.textContent = boardValues[0];
       tile2.textContent = boardValues[1];
