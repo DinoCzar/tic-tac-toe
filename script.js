@@ -1,5 +1,5 @@
 const gameBoard = (() => {
-  const boardValues = ["X", "", "X", "O", "X", "", "O", "", ""];
+  const boardValues = ["", "", "", "", "", "", "", "", ""];
 
   const tile = document.querySelectorAll(".tile");
   tile.forEach((tile) => {
