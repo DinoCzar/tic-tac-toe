@@ -24,7 +24,6 @@ const gameBoard = (() => {
           boardValues[computerSelection] = "O";
           break;
         }
-        console.log(computerSelection);
       }
 
       tile1.textContent = boardValues[0];
