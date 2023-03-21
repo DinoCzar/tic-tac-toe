@@ -41,7 +41,7 @@ newGame.addEventListener("click", () => {
     tile.textContent = "";
     scores.textContent = usernameOne.name + "'s Turn";
     tile.style.cssText = "background-color: #d4d4d4;";
-    scoreboard.style.cssText = "background-color: #22d3ee;";
+    scoreboard.style.cssText = "background-color: #a5f3fc;";
   });
 });
 
@@ -65,16 +65,16 @@ const gameBoard = (() => {
           scores.textContent = usernameTwo.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "X";
           tile.style.cssText = "background-color: #22d3ee;";
-          playerTwoDiv.style.cssText = "background-color: #4ade80;";
+          playerTwoDiv.style.cssText = "background-color: #bbf7d0;";
           playerOneDiv.style.cssText = "background-color: #d4d4d4;";
-          scoreboard.style.cssText = "background-color: #4ade80;";
+          scoreboard.style.cssText = "background-color: #bbf7d0;";
         } else {
           scores.textContent = usernameOne.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "O";
           tile.style.cssText = "background-color: #4ade80;";
-          playerOneDiv.style.cssText = "background-color: #22d3ee;";
+          playerOneDiv.style.cssText = "background-color: #a5f3fc;";
           playerTwoDiv.style.cssText = "background-color: #d4d4d4;";
-          scoreboard.style.cssText = "background-color: #22d3ee;";
+          scoreboard.style.cssText = "background-color: #a5f3fc;";
         }
 
         tile1.textContent = boardValues[0];
@@ -100,9 +100,15 @@ const gameBoard = (() => {
           if (input[0] === "X" && input[1] === "X" && input[2] === "X") {
             scores.textContent = usernameOne.name + " Wins!";
             boardValues = ["", "", "", "", "", "", "", "", ""];
+            scoreboard.style.cssText = "background-color: #22d3ee;";
+            playerOneDiv.style.cssText = "background-color: #22d3ee;";
+            playerTwoDiv.style.cssText = "background-color: #d4d4d4;";
           } else if (input[0] === "O" && input[1] === "O" && input[2] === "O") {
             scores.textContent = usernameTwo.name + " Wins!";
             boardValues = ["", "", "", "", "", "", "", "", ""];
+            scoreboard.style.cssText = "background-color: #4ade80;";
+            playerTwoDiv.style.cssText = "background-color: #4ade80;";
+            playerOneDiv.style.cssText = "background-color: #d4d4d4;";
           }
         }
 

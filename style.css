@@ -44,11 +44,11 @@ body {
 }
 
 #player-one {
-  background-color: #22d3ee;
+  background-color: #a5f3fc;
 }
 
 #player-two {
-  background-color: #4ade80;
+  background-color: #bbf7d0;
 }
 
 #username-one,
@@ -56,8 +56,13 @@ body {
   font-size: 30px;
 }
 
+#vs,
+#new-game-button {
+  background-color: #404040;
+  color: #e5e5e5;
+}
+
 #vs {
-  background-color: #d4d4d4;
   font-weight: bold;
   font-size: 20px;
   display: grid;
@@ -87,7 +92,7 @@ body {
   display: grid;
   padding: 20px;
   align-items: center;
-  background-color: #22d3ee;
+  background-color: #a5f3fc;
   grid-row-start: 3;
   border-radius: 30px;
 }
@@ -110,6 +115,4 @@ body {
   border-radius: 30px;
   width: 150px;
   border: none;
-  background-color: #d4d4d4;
-  font-weight: bold;
 }
