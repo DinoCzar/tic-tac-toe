@@ -1,5 +1,5 @@
 const gameBoard = (() => {
-  const boardValues = ["", "", "", "", "", "", "", "", ""];
+  let boardValues = ["", "", "", "", "", "", "", "", ""];
 
   const tile1 = document.querySelector("#button-1");
   const tile2 = document.querySelector("#button-2");
@@ -14,6 +14,9 @@ const gameBoard = (() => {
   const tile = document.querySelectorAll(".tile");
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
+      const scores = document.querySelector("#scores");
+      scores.textContent = "";
+
       boardValues[tile.id.slice(7, 8) - 1] = "X";
 
       for (let i = 0; i < boardValues.length; i++) {
@@ -45,13 +48,13 @@ const gameBoard = (() => {
       const diagonalOne = [boardValues[0], boardValues[4], boardValues[8]];
       const diagonalTwo = [boardValues[2], boardValues[4], boardValues[6]];
 
-      const scores = document.querySelector("#scores");
-
       function checkWinner(input) {
         if (input[0] === "X" && input[1] === "X" && input[2] === "X") {
           scores.textContent = "You Won!";
+          boardValues = ["", "", "", "", "", "", "", "", ""];
         } else if (input[0] === "O" && input[1] === "O" && input[2] === "O") {
           scores.textContent = "You Lost!";
+          boardValues = ["", "", "", "", "", "", "", "", ""];
         }
       }
 
