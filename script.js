@@ -1,22 +1,29 @@
-const playerOne = (name) => {
+let boardValues = ["", "", "", "", "", "", "", "", ""];
+
+const userOne = (name) => {
   return { name };
 };
 
-const playerTwo = (name) => {
+const userTwo = (name) => {
   const turns = 0;
   return { name, turns };
 };
 
-const usernameOne = playerOne("John");
-const usernameTwo = playerOne("Mark");
-console.log(usernameOne.name);
-console.log(usernameTwo.name);
+const usernameOne = userOne("John");
+const usernameTwo = userOne("Mark");
+
+const playerOne = document.querySelector("#username-one");
+const playerTwo = document.querySelector("#username-two");
+playerOne.textContent = usernameOne.name;
+playerTwo.textContent = usernameTwo.name;
+
+const newGame = document.querySelector("#new-game-button");
+newGame.addEventListener("click", () => {
+  boardValues = ["", "", "", "", "", "", "", "", ""];
+  console.log("Hello");
+});
 
 const gameBoard = (() => {
-  let boardValues = ["", "", "", "", "", "", "", "", ""];
-
-  const playerOne = document.querySelector("#username-one");
-  const playerTwo = document.querySelector("#username-two");
   const tile1 = document.querySelector("#button-1");
   const tile2 = document.querySelector("#button-2");
   const tile3 = document.querySelector("#button-3");
@@ -28,7 +35,7 @@ const gameBoard = (() => {
   const tile9 = document.querySelector("#button-9");
   const scores = document.querySelector("#scores");
 
-  scores.textContent = "Player 1's Turn";
+  scores.textContent = usernameOne.name + "'s Turn";
 
   const tile = document.querySelectorAll(".tile");
   tile.forEach((tile) => {
@@ -40,15 +47,15 @@ const gameBoard = (() => {
         alert("Please select a blank square");
       } else {
         if (
-          scores.textContent === "Player 1's Turn" ||
-          scores.textContent === "Player 1 Wins!" ||
-          scores.textContent === "Player 2 Wins!" ||
+          scores.textContent === usernameOne.name + "'s Turn" ||
+          scores.textContent === usernameOne.name + " Wins!" ||
+          scores.textContent === usernameTwo.name + " Wins!" ||
           scores.textContent === "It's a Tie!"
         ) {
-          scores.textContent = "Player 2's Turn";
+          scores.textContent = usernameTwo.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "X";
         } else {
-          scores.textContent = "Player 1's Turn";
+          scores.textContent = usernameOne.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "O";
         }
 
@@ -73,10 +80,10 @@ const gameBoard = (() => {
 
         function checkWinner(input) {
           if (input[0] === "X" && input[1] === "X" && input[2] === "X") {
-            scores.textContent = "Player 1 Wins!";
+            scores.textContent = usernameOne.name + " Wins!";
             boardValues = ["", "", "", "", "", "", "", "", ""];
           } else if (input[0] === "O" && input[1] === "O" && input[2] === "O") {
-            scores.textContent = "Player 2 Wins!";
+            scores.textContent = usernameTwo.name + " Wins!";
             boardValues = ["", "", "", "", "", "", "", "", ""];
           }
         }
