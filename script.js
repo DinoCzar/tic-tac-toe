@@ -10,7 +10,7 @@ const userTwo = (name) => {
 };
 
 const usernameOne = userOne("John");
-const usernameTwo = userOne("Mark");
+const usernameTwo = userTwo("Mark");
 
 const playerOneDiv = document.querySelector("#player-one");
 const playerTwoDiv = document.querySelector("#player-two");
@@ -41,6 +41,8 @@ newGame.addEventListener("click", () => {
     tile.textContent = "";
     scores.textContent = usernameOne.name + "'s Turn";
     tile.style.cssText = "background-color: #d4d4d4;";
+    playerOneDiv.style.cssText = "background-color: #a5f3fc;";
+    playerTwoDiv.style.cssText = "background-color: #d4d4d4;";
     scoreboard.style.cssText = "background-color: #a5f3fc;";
   });
 });
