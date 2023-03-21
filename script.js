@@ -23,16 +23,19 @@ let usernameTwo = "";
 
 submitP1.addEventListener("click", (e) => {
   usernameOne = userOne(usernameP1.value);
+  usernameP1.style.display = "none";
+  submitP1.style.display = "none";
+  playerOne.textContent = usernameOne.name;
   scores.textContent = usernameOne.name + "'s Turn";
   scoreboard.style.cssText = "background-color: #a5f3fc;";
 });
 
 submitP2.addEventListener("click", (e) => {
   usernameTwo = userTwo(usernameP2.value);
+  usernameP2.style.display = "none";
+  submitP2.style.display = "none";
+  playerTwo.textContent = usernameTwo.name;
 });
-
-playerOne.textContent = usernameOne.name;
-playerTwo.textContent = usernameTwo.name;
 
 const tile = document.querySelectorAll(".tile");
 const tile1 = document.querySelector("#button-1");
