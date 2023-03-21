@@ -45,11 +45,13 @@ body {
   justify-content: center;
 }
 
-#player-one {
+#player-one,
+#username-p1 {
   background-color: #a5f3fc;
 }
 
-#player-two {
+#player-two,
+#username-p2 {
   background-color: #bbf7d0;
 }
 
@@ -58,16 +60,15 @@ body {
 #username-p1,
 #username-p2 {
   font-size: 20px;
-  width: 100px;
+  width: 110px;
   text-align: center;
 }
 
 #username-p1,
 #username-p2 {
-  margin-top: 30px;
-  margin-bottom: 4px;
+  margin-top: 35px;
   border: none;
-  padding: 10px;
+  padding: 5px;
   height: 20px;
   border-radius: 15px;
 }
@@ -79,13 +80,14 @@ body {
 
 #submit-p1,
 #submit-p2 {
-  width: 50px;
-  height: 15px;
+  width: 65px;
+  height: 20px;
   font-size: 12px;
   border: none;
   border-radius: 5px;
-  background-color: #171717;
-  color: #f5f5f5;
+  background-color: #a3a3a3;
+  color: #171717;
+  font-weight: bold;
 }
 
 #vs,
