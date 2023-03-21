@@ -1,6 +1,22 @@
+const playerOne = (name) => {
+  return { name };
+};
+
+const playerTwo = (name) => {
+  const turns = 0;
+  return { name, turns };
+};
+
+const usernameOne = playerOne("John");
+const usernameTwo = playerOne("Mark");
+console.log(usernameOne.name);
+console.log(usernameTwo.name);
+
 const gameBoard = (() => {
   let boardValues = ["", "", "", "", "", "", "", "", ""];
 
+  const playerOne = document.querySelector("#username-one");
+  const playerTwo = document.querySelector("#username-two");
   const tile1 = document.querySelector("#button-1");
   const tile2 = document.querySelector("#button-2");
   const tile3 = document.querySelector("#button-3");
@@ -11,6 +27,7 @@ const gameBoard = (() => {
   const tile8 = document.querySelector("#button-8");
   const tile9 = document.querySelector("#button-9");
   const scores = document.querySelector("#scores");
+
   scores.textContent = "Player 1's Turn";
 
   const tile = document.querySelectorAll(".tile");
@@ -72,14 +89,6 @@ const gameBoard = (() => {
         checkWinner(rightColumn);
         checkWinner(diagonalOne);
         checkWinner(diagonalTwo);
-
-        for (let i = 0; i < boardValues.length; i++) {
-          if (boardValues[i] === "X" || boardValues[i] === "O") {
-            break;
-          } else {
-            scores.textContent = "It's a Tie!";
-          }
-        }
       }
     });
   });
