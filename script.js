@@ -1,5 +1,15 @@
 let boardValues = ["", "", "", "", "", "", "", "", ""];
 
+const playerOneDiv = document.querySelector("#player-one");
+const playerTwoDiv = document.querySelector("#player-two");
+const usernameP1 = document.querySelector("#username-p1");
+const usernameP2 = document.querySelector("#username-p2");
+const submitP1 = document.querySelector("#submit-p1");
+const submitP2 = document.querySelector("#submit-p2");
+const playerOne = document.querySelector("#username-one");
+const playerTwo = document.querySelector("#username-two");
+const scoreboard = document.querySelector("#scoreboard");
+
 const userOne = (name) => {
   return { name };
 };
@@ -8,18 +18,23 @@ const userTwo = (name) => {
   return { name };
 };
 
-const usernameOne = userOne("John");
-const usernameTwo = userTwo("Mark");
+let usernameOne = "";
+let usernameTwo = "";
 
-const playerOneDiv = document.querySelector("#player-one");
-const playerTwoDiv = document.querySelector("#player-two");
-const scoreboard = document.querySelector("#scoreboard");
+submitP1.addEventListener("click", (e) => {
+  usernameOne = userOne(usernameP1.value);
+  console.log(usernameOne.name);
+});
 
-const playerOne = document.querySelector("#username-one");
-const playerTwo = document.querySelector("#username-two");
+submitP2.addEventListener("click", (e) => {
+  usernameTwo = userTwo(usernameP2.value);
+  console.log(usernameTwo.name);
+});
+
 playerOne.textContent = usernameOne.name;
 playerTwo.textContent = usernameTwo.name;
 
+const tile = document.querySelectorAll(".tile");
 const tile1 = document.querySelector("#button-1");
 const tile2 = document.querySelector("#button-2");
 const tile3 = document.querySelector("#button-3");
@@ -30,8 +45,6 @@ const tile7 = document.querySelector("#button-7");
 const tile8 = document.querySelector("#button-8");
 const tile9 = document.querySelector("#button-9");
 const scores = document.querySelector("#scores");
-
-const tile = document.querySelectorAll(".tile");
 
 const newGame = document.querySelector("#new-game-button");
 newGame.addEventListener("click", () => {
