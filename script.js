@@ -12,6 +12,10 @@ const userTwo = (name) => {
 const usernameOne = userOne("John");
 const usernameTwo = userOne("Mark");
 
+const playerOneDiv = document.querySelector("#player-one");
+const playerTwoDiv = document.querySelector("#player-two");
+const scoreboard = document.querySelector("#scoreboard");
+
 const playerOne = document.querySelector("#username-one");
 const playerTwo = document.querySelector("#username-two");
 playerOne.textContent = usernameOne.name;
@@ -36,6 +40,8 @@ newGame.addEventListener("click", () => {
   tile.forEach((tile) => {
     tile.textContent = "";
     scores.textContent = usernameOne.name + "'s Turn";
+    tile.style.cssText = "background-color: grey;";
+    scoreboard.style.cssText = "background-color: red;";
   });
 });
 
@@ -58,9 +64,17 @@ const gameBoard = (() => {
         ) {
           scores.textContent = usernameTwo.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "X";
+          tile.style.cssText = "background-color: red;";
+          playerTwoDiv.style.cssText = "background-color: green;";
+          playerOneDiv.style.cssText = "background-color: grey;";
+          scoreboard.style.cssText = "background-color: green;";
         } else {
           scores.textContent = usernameOne.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "O";
+          tile.style.cssText = "background-color: green;";
+          playerOneDiv.style.cssText = "background-color: red;";
+          playerTwoDiv.style.cssText = "background-color: grey;";
+          scoreboard.style.cssText = "background-color: red;";
         }
 
         tile1.textContent = boardValues[0];

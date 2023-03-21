@@ -14,7 +14,7 @@ body {
 
 #container {
   display: grid;
-  gap: 10px;
+  gap: 30px;
   grid-template-rows: 100px 400px 100px 100px;
   width: 400px;
   height: 800px;
@@ -23,14 +23,17 @@ body {
 #players {
   grid-row-start: 1;
   display: grid;
-  grid-template-columns: 1fr 40px 1fr;
+  grid-template-columns: 1fr 50px 1fr;
   gap: 10px;
+  align-items: center;
 }
 
 .player {
   display: grid;
   background-color: lightgray;
   width: 100%;
+  height: 100%;
+  border-radius: 30px;
 }
 
 #player-one,
@@ -38,6 +41,14 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
+}
+
+#player-one {
+  background-color: red;
+}
+
+#player-two {
+  background-color: green;
 }
 
 #username-one,
@@ -52,6 +63,8 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
+  height: 50px;
+  border-radius: 30px;
 }
 
 #board {
@@ -67,14 +80,16 @@ body {
   height: 1fr;
   border: none;
   font-size: 80px;
+  border-radius: 30px;
 }
 
 #scoreboard {
   display: grid;
   padding: 20px;
   align-items: center;
-  background-color: lightgrey;
+  background-color: red;
   grid-row-start: 3;
+  border-radius: 30px;
 }
 
 #scores {
@@ -83,17 +98,18 @@ body {
 }
 
 #new-game {
-  background-color: lightgray;
   grid-row-start: 4;
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 
 #new-game-button {
-  font-size: 30px;
+  font-size: 20px;
   padding: 20px;
-  border-radius: 15px 15px 15px 15px;
-  width: 200px;
+  border-radius: 30px;
+  width: 150px;
   border: none;
+  background-color: lightgrey;
+  font-weight: bold;
 }
