@@ -5,8 +5,7 @@ const userOne = (name) => {
 };
 
 const userTwo = (name) => {
-  const turns = 0;
-  return { name, turns };
+  return { name };
 };
 
 const usernameOne = userOne("John");
@@ -50,6 +49,8 @@ newGame.addEventListener("click", () => {
 const gameBoard = (() => {
   scores.textContent = usernameOne.name + "'s Turn";
 
+  let turns = 0;
+
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
       if (
@@ -70,6 +71,7 @@ const gameBoard = (() => {
           playerTwoDiv.style.cssText = "background-color: #bbf7d0;";
           playerOneDiv.style.cssText = "background-color: #f5f5f5;";
           scoreboard.style.cssText = "background-color: #bbf7d0;";
+          turns++;
         } else {
           scores.textContent = usernameOne.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "O";
@@ -122,6 +124,16 @@ const gameBoard = (() => {
         checkWinner(rightColumn);
         checkWinner(diagonalOne);
         checkWinner(diagonalTwo);
+
+        if (
+          turns === 5 &&
+          scores.textContent === usernameTwo.name + "'s Turn"
+        ) {
+          scores.textContent = "It's a Tie!";
+          scoreboard.style.cssText = "background-color: #a78bfa;";
+          playerTwoDiv.style.cssText = "background-color: #a78bfa;";
+          playerOneDiv.style.cssText = "background-color: #a78bfa;";
+        }
       }
     });
   });
