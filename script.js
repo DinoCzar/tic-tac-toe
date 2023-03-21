@@ -10,23 +10,22 @@ const gameBoard = (() => {
   const tile7 = document.querySelector("#button-7");
   const tile8 = document.querySelector("#button-8");
   const tile9 = document.querySelector("#button-9");
+  const scores = document.querySelector("#scores");
+  scores.textContent = "Player 1's Turn";
 
   const tile = document.querySelectorAll(".tile");
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
-      const scores = document.querySelector("#scores");
-      scores.textContent = "";
-
-      boardValues[tile.id.slice(7, 8) - 1] = "X";
-
-      let computerSelection;
-
-      for (let i = 0; i < 100; i++) {
-        computerSelection = [Math.floor(Math.random() * boardValues.length)];
-        if (boardValues[computerSelection] === "") {
-          boardValues[computerSelection] = "O";
-          break;
-        }
+      if (
+        scores.textContent === "Player 1's Turn" ||
+        scores.textContent === "Player 1 Wins!" ||
+        scores.textContent === "Player 2 Wins!"
+      ) {
+        scores.textContent = "Player 2's Turn";
+        boardValues[tile.id.slice(7, 8) - 1] = "X";
+      } else {
+        scores.textContent = "Player 1's Turn";
+        boardValues[tile.id.slice(7, 8) - 1] = "O";
       }
 
       tile1.textContent = boardValues[0];
@@ -50,10 +49,10 @@ const gameBoard = (() => {
 
       function checkWinner(input) {
         if (input[0] === "X" && input[1] === "X" && input[2] === "X") {
-          scores.textContent = "You Won!";
+          scores.textContent = "Player 1 Wins!";
           boardValues = ["", "", "", "", "", "", "", "", ""];
         } else if (input[0] === "O" && input[1] === "O" && input[2] === "O") {
-          scores.textContent = "You Lost!";
+          scores.textContent = "Player 2 Wins!";
           boardValues = ["", "", "", "", "", "", "", "", ""];
         }
       }
