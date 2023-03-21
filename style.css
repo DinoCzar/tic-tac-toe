@@ -30,9 +30,14 @@ body {
   font-size: 80px;
 }
 
-#scores {
+#scoreboard {
+  display: grid;
   padding: 20px;
+  align-items: center;
   background-color: lightgrey;
+}
+
+#scores {
   text-align: center;
   font-size: 40px;
 }
