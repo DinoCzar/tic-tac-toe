@@ -28,6 +28,15 @@ submitP1.addEventListener("click", (e) => {
   playerOne.textContent = usernameOne.name;
   scores.textContent = usernameOne.name + "'s Turn";
   scoreboard.style.cssText = "background-color: #a5f3fc;";
+  tile1.style.cssText = "background-color: #f5f5f5";
+  tile2.style.cssText = "background-color: #f5f5f5";
+  tile3.style.cssText = "background-color: #f5f5f5";
+  tile4.style.cssText = "background-color: #f5f5f5";
+  tile5.style.cssText = "background-color: #f5f5f5";
+  tile6.style.cssText = "background-color: #f5f5f5";
+  tile7.style.cssText = "background-color: #f5f5f5";
+  tile8.style.cssText = "background-color: #f5f5f5";
+  tile9.style.cssText = "background-color: #f5f5f5";
 });
 
 submitP2.addEventListener("click", (e) => {
@@ -35,6 +44,15 @@ submitP2.addEventListener("click", (e) => {
   usernameP2.style.display = "none";
   submitP2.style.display = "none";
   playerTwo.textContent = usernameTwo.name;
+  tile1.style.cssText = "background-color: #f5f5f5";
+  tile2.style.cssText = "background-color: #f5f5f5";
+  tile3.style.cssText = "background-color: #f5f5f5";
+  tile4.style.cssText = "background-color: #f5f5f5";
+  tile5.style.cssText = "background-color: #f5f5f5";
+  tile6.style.cssText = "background-color: #f5f5f5";
+  tile7.style.cssText = "background-color: #f5f5f5";
+  tile8.style.cssText = "background-color: #f5f5f5";
+  tile9.style.cssText = "background-color: #f5f5f5";
 });
 
 const tile = document.querySelectorAll(".tile");
@@ -49,6 +67,16 @@ const tile8 = document.querySelector("#button-8");
 const tile9 = document.querySelector("#button-9");
 const scores = document.querySelector("#scores");
 
+tile1.style.cssText = "background-color: #171717";
+tile2.style.cssText = "background-color: #171717";
+tile3.style.cssText = "background-color: #171717";
+tile4.style.cssText = "background-color: #171717";
+tile5.style.cssText = "background-color: #171717";
+tile6.style.cssText = "background-color: #171717";
+tile7.style.cssText = "background-color: #171717";
+tile8.style.cssText = "background-color: #171717";
+tile9.style.cssText = "background-color: #171717";
+
 const newGame = document.querySelector("#new-game-button");
 newGame.addEventListener("click", () => {
   boardValues = ["", "", "", "", "", "", "", "", ""];
@@ -59,6 +87,15 @@ newGame.addEventListener("click", () => {
     playerOneDiv.style.cssText = "background-color: #a5f3fc;";
     playerTwoDiv.style.cssText = "background-color: #f5f5f5;";
     scoreboard.style.cssText = "background-color: #a5f3fc;";
+    tile1.style.cssText = "background-color: #f5f5f5";
+    tile2.style.cssText = "background-color: #f5f5f5";
+    tile3.style.cssText = "background-color: #f5f5f5";
+    tile4.style.cssText = "background-color: #f5f5f5";
+    tile5.style.cssText = "background-color: #f5f5f5";
+    tile6.style.cssText = "background-color: #f5f5f5";
+    tile7.style.cssText = "background-color: #f5f5f5";
+    tile8.style.cssText = "background-color: #f5f5f5";
+    tile9.style.cssText = "background-color: #f5f5f5";
   });
 });
 
@@ -118,6 +155,15 @@ const gameBoard = (() => {
             scoreboard.style.cssText = "background-color: #22d3ee;";
             playerOneDiv.style.cssText = "background-color: #22d3ee;";
             playerTwoDiv.style.cssText = "background-color: #f5f5f5;";
+            tile1.style.cssText = "background-color: #171717";
+            tile2.style.cssText = "background-color: #171717";
+            tile3.style.cssText = "background-color: #171717";
+            tile4.style.cssText = "background-color: #171717";
+            tile5.style.cssText = "background-color: #171717";
+            tile6.style.cssText = "background-color: #171717";
+            tile7.style.cssText = "background-color: #171717";
+            tile8.style.cssText = "background-color: #171717";
+            tile9.style.cssText = "background-color: #171717";
           } else if (input[0] === "O" && input[1] === "O" && input[2] === "O") {
             scores.textContent = usernameTwo.name + " Wins!";
             boardValues = ["", "", "", "", "", "", "", "", ""];
