@@ -19,10 +19,10 @@ const gameBoard = (() => {
 
       boardValues[tile.id.slice(7, 8) - 1] = "X";
 
-      for (let i = 0; i < boardValues.length; i++) {
-        let computerSelection = [
-          Math.floor(Math.random() * boardValues.length),
-        ];
+      let computerSelection;
+
+      for (let i = 0; i < 100; i++) {
+        computerSelection = [Math.floor(Math.random() * boardValues.length)];
         if (boardValues[computerSelection] === "") {
           boardValues[computerSelection] = "O";
           break;
