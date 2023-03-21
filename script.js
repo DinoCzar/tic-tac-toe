@@ -17,27 +17,31 @@ const playerTwo = document.querySelector("#username-two");
 playerOne.textContent = usernameOne.name;
 playerTwo.textContent = usernameTwo.name;
 
+const tile1 = document.querySelector("#button-1");
+const tile2 = document.querySelector("#button-2");
+const tile3 = document.querySelector("#button-3");
+const tile4 = document.querySelector("#button-4");
+const tile5 = document.querySelector("#button-5");
+const tile6 = document.querySelector("#button-6");
+const tile7 = document.querySelector("#button-7");
+const tile8 = document.querySelector("#button-8");
+const tile9 = document.querySelector("#button-9");
+const scores = document.querySelector("#scores");
+
+const tile = document.querySelectorAll(".tile");
+
 const newGame = document.querySelector("#new-game-button");
 newGame.addEventListener("click", () => {
   boardValues = ["", "", "", "", "", "", "", "", ""];
-  console.log("Hello");
+  tile.forEach((tile) => {
+    tile.textContent = "";
+    scores.textContent = usernameOne.name + "'s Turn";
+  });
 });
 
 const gameBoard = (() => {
-  const tile1 = document.querySelector("#button-1");
-  const tile2 = document.querySelector("#button-2");
-  const tile3 = document.querySelector("#button-3");
-  const tile4 = document.querySelector("#button-4");
-  const tile5 = document.querySelector("#button-5");
-  const tile6 = document.querySelector("#button-6");
-  const tile7 = document.querySelector("#button-7");
-  const tile8 = document.querySelector("#button-8");
-  const tile9 = document.querySelector("#button-9");
-  const scores = document.querySelector("#scores");
-
   scores.textContent = usernameOne.name + "'s Turn";
 
-  const tile = document.querySelectorAll(".tile");
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
       if (
