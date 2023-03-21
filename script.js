@@ -23,12 +23,12 @@ let usernameTwo = "";
 
 submitP1.addEventListener("click", (e) => {
   usernameOne = userOne(usernameP1.value);
-  console.log(usernameOne.name);
+  scores.textContent = usernameOne.name + "'s Turn";
+  scoreboard.style.cssText = "background-color: #a5f3fc;";
 });
 
 submitP2.addEventListener("click", (e) => {
   usernameTwo = userTwo(usernameP2.value);
-  console.log(usernameTwo.name);
 });
 
 playerOne.textContent = usernameOne.name;
@@ -60,8 +60,6 @@ newGame.addEventListener("click", () => {
 });
 
 const gameBoard = (() => {
-  scores.textContent = usernameOne.name + "'s Turn";
-
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
       if (
