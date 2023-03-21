@@ -43,7 +43,6 @@ body {
 #player-two {
   display: grid;
   justify-content: center;
-  align-items: center;
 }
 
 #player-one {
@@ -55,9 +54,38 @@ body {
 }
 
 #username-one,
-#username-two {
-  font-size: 30px;
-  width: 100%;
+#username-two,
+#username-p1,
+#username-p2 {
+  font-size: 20px;
+  width: 100px;
+  text-align: center;
+}
+
+#username-p1,
+#username-p2 {
+  margin-top: 30px;
+  margin-bottom: 4px;
+  border: none;
+  padding: 10px;
+  height: 20px;
+  border-radius: 15px;
+}
+
+.submit-div {
+  display: grid;
+  justify-content: center;
+}
+
+#submit-p1,
+#submit-p2 {
+  width: 50px;
+  height: 15px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #171717;
+  color: #f5f5f5;
 }
 
 #vs,
