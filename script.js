@@ -49,9 +49,9 @@ const gameBoard = (() => {
 
       function checkWinner(input) {
         if (input[0] === "X" && input[1] === "X" && input[2] === "X") {
-          scores.textContent = "Player 1 Wins!";
+          scores.textContent = "You Won!";
         } else if (input[0] === "O" && input[1] === "O" && input[2] === "O") {
-          scores.textContent = "Player 2 Wins!";
+          scores.textContent = "You Lost!";
         }
       }
 
