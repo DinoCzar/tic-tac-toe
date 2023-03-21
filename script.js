@@ -49,8 +49,6 @@ newGame.addEventListener("click", () => {
 const gameBoard = (() => {
   scores.textContent = usernameOne.name + "'s Turn";
 
-  let turns = 0;
-
   tile.forEach((tile) => {
     tile.addEventListener("click", () => {
       if (
@@ -71,7 +69,6 @@ const gameBoard = (() => {
           playerTwoDiv.style.cssText = "background-color: #bbf7d0;";
           playerOneDiv.style.cssText = "background-color: #f5f5f5;";
           scoreboard.style.cssText = "background-color: #bbf7d0;";
-          turns++;
         } else {
           scores.textContent = usernameOne.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "O";
@@ -126,13 +123,30 @@ const gameBoard = (() => {
         checkWinner(diagonalTwo);
 
         if (
-          turns === 5 &&
-          scores.textContent === usernameTwo.name + "'s Turn"
+          (boardValues[0] === "X" || boardValues[0] === "O") &&
+          (boardValues[1] === "X" || boardValues[1] === "O")
         ) {
-          scores.textContent = "It's a Tie!";
-          scoreboard.style.cssText = "background-color: #a78bfa;";
-          playerTwoDiv.style.cssText = "background-color: #a78bfa;";
-          playerOneDiv.style.cssText = "background-color: #a78bfa;";
+          if (
+            (boardValues[2] === "X" || boardValues[2] === "O") &&
+            (boardValues[3] === "X" || boardValues[3] === "O")
+          ) {
+            if (
+              (boardValues[4] === "X" || boardValues[4] === "O") &&
+              (boardValues[5] === "X" || boardValues[5] === "O")
+            ) {
+              if (
+                (boardValues[6] === "X" || boardValues[6] === "O") &&
+                (boardValues[7] === "X" || boardValues[7] === "O")
+              ) {
+                if (boardValues[8] === "X" || boardValues[8] === "O") {
+                  scores.textContent = "It's a Tie!";
+                  scoreboard.style.cssText = "background-color: #a78bfa";
+                  playerTwoDiv.style.cssText = "background-color: #a78bfa";
+                  playerOneDiv.style.cssText = "background-color: #a78bfa";
+                }
+              }
+            }
+          }
         }
       }
     });
