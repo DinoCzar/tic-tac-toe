@@ -40,8 +40,8 @@ newGame.addEventListener("click", () => {
   tile.forEach((tile) => {
     tile.textContent = "";
     scores.textContent = usernameOne.name + "'s Turn";
-    tile.style.cssText = "background-color: grey;";
-    scoreboard.style.cssText = "background-color: red;";
+    tile.style.cssText = "background-color: #d4d4d4;";
+    scoreboard.style.cssText = "background-color: #22d3ee;";
   });
 });
 
@@ -64,17 +64,17 @@ const gameBoard = (() => {
         ) {
           scores.textContent = usernameTwo.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "X";
-          tile.style.cssText = "background-color: red;";
-          playerTwoDiv.style.cssText = "background-color: green;";
-          playerOneDiv.style.cssText = "background-color: grey;";
-          scoreboard.style.cssText = "background-color: green;";
+          tile.style.cssText = "background-color: #22d3ee;";
+          playerTwoDiv.style.cssText = "background-color: #4ade80;";
+          playerOneDiv.style.cssText = "background-color: #d4d4d4;";
+          scoreboard.style.cssText = "background-color: #4ade80;";
         } else {
           scores.textContent = usernameOne.name + "'s Turn";
           boardValues[tile.id.slice(7, 8) - 1] = "O";
-          tile.style.cssText = "background-color: green;";
-          playerOneDiv.style.cssText = "background-color: red;";
-          playerTwoDiv.style.cssText = "background-color: grey;";
-          scoreboard.style.cssText = "background-color: red;";
+          tile.style.cssText = "background-color: #4ade80;";
+          playerOneDiv.style.cssText = "background-color: #22d3ee;";
+          playerTwoDiv.style.cssText = "background-color: #d4d4d4;";
+          scoreboard.style.cssText = "background-color: #22d3ee;";
         }
 
         tile1.textContent = boardValues[0];
